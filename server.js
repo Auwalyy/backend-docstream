@@ -33,7 +33,7 @@ async function seedData() {
   const User = require('./models/User');
   const existing = await User.findOne({ staffId: 'ICT001' });
   if (!existing) {
-    const bcrypt = require('bcryptjs');
+    const bcrypt = require('bcrypt');
     const hash = await bcrypt.hash('password123', 10);
     const users = [
       { staffId: 'ICT001', name: 'ICT Admin', email: 'ict@nmdpra.gov.ng', password: hash, department: 'ICT', role: 'ict' },
